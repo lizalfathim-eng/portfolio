@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a192f" />
+    <meta
+      name="description"
+      content="Explore ChromaNav, a desktop computer vision prototype for traffic signal recognition and spoken announcements."
+    />
+    <title>ChromaNav — Computer Vision Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="project-theme.css" />
+  </head>
+  <body class="chroma-page">
+    <a class="skip-link" href="#introduction">Skip to project introduction</a>
+
+    <header class="chroma-header">
+      <a class="chroma-brand" href="index.html#things-ive-built" aria-label="ChromaNav, back to portfolio">
+        <span>Chroma<span class="brand-light">Nav</span></span>
+        <span class="brand-label mono">PROJECT FILE / 002</span>
+      </a>
+      <a class="back-link" href="index.html#things-ive-built"><span aria-hidden="true">←</span> Back to Portfolio</a>
+    </header>
+
+    <nav class="section-nav mono" aria-label="Project sections">
+      <a href="#introduction">01 &nbsp; INTRODUCTION</a>
+      <a href="#demonstration">02 &nbsp; DEMONSTRATION</a>
+      <a href="#how-it-works">03 &nbsp; HOW IT WORKS</a>
+      <a href="#technical-overview">04 &nbsp; TECHNICAL OVERVIEW</a>
+    </nav>
+
+    <main>
+      <section class="project-hero page-shell" id="introduction" aria-labelledby="project-title">
+        <div class="hero-copy">
+          <p class="eyebrow mono"><span>COMPUTER VISION</span> &nbsp; / &nbsp; ACCESSIBILITY</p>
+          <h1 id="project-title">Chroma<span>Nav</span></h1>
+          <p class="hero-lede">
+            A real-time computer vision application designed to detect traffic
+            signals and assist colour-blind drivers through visual recognition.
+          </p>
+          <p class="hero-context">
+            Traffic lights communicate through colour. ChromaNav explores an
+            additional way to recognise a detected signal and announce its
+            estimated colour, so users do not have to rely on colour alone.
+          </p>
+          <div class="hero-actions">
+            <a class="text-link mono" href="#demonstration">VIEW THE DEMONSTRATION <span aria-hidden="true">↓</span></a>
+            <a
+              class="text-link mono text-link-secondary"
+              href="https://github.com/lizalfathim-eng/Chromanav"
+              target="_blank"
+              rel="noopener noreferrer"
+            >OPEN SOURCE REPOSITORY <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="A schematic illustration of a computer vision pipeline, not application footage">
+          <div class="visual-topline mono"><span>DESKTOP PROTOTYPE</span><span>LOCAL CAMERA INPUT</span></div>
+          <div class="visual-schematic" aria-hidden="true">
+            <span class="schematic-frame"></span>
+            <span class="schematic-cross cross-a">+</span>
+            <span class="schematic-cross cross-b">+</span>
+            <span class="schematic-node">CV</span>
+            <span class="schematic-link"></span>
+            <span class="schematic-endpoint"></span>
+          </div>
+          <div class="visual-caption mono"><span>PIPELINE STUDY / 01</span><span>ILLUSTRATION — NOT APP OUTPUT</span></div>
+        </div>
+      </section>
+
+      <section class="demo-section page-shell" id="demonstration" aria-labelledby="demo-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow mono"><span>02</span> &nbsp; LIVE DEMONSTRATION</p>
+            <h2 id="demo-title">The application,<br /><span>in motion.</span></h2>
+          </div>
+          <p class="section-aside">
+            A recording of the original Python desktop application will live
+            here. This portfolio page does not run detection.
+          </p>
+        </div>
+
+        <figure class="demo-figure">
+          <div class="demo-stage">
+            <div class="demo-placeholder">
+              <div class="placeholder-topline mono"><span>APPLICATION CAPTURE</span><span>16:9 / VIDEO SLOT</span></div>
+              <div class="placeholder-content">
+                <svg class="film-mark" viewBox="0 0 112 82" role="img" aria-labelledby="film-title">
+                  <title id="film-title">Video recording placeholder</title>
+                  <rect x="1" y="1" width="110" height="80" rx="2" fill="none" stroke="currentColor" />
+                  <path d="M13 1v80M99 1v80M1 17h12m-12 16h12m-12 16h12m-12 16h12m86-48h12m-12 16h12m-12 16h12m-12 16h12" fill="none" stroke="currentColor" />
+                  <path d="m49 29 22 12-22 12z" fill="none" stroke="currentColor" stroke-linejoin="round" />
+                </svg>
+                <p class="placeholder-label mono">REAL APPLICATION DEMONSTRATION</p>
+                <p class="placeholder-title">Recording to be added</p>
+                <p class="placeholder-path mono">ADD YOUR MP4 AT <code>media/chromanav-demo.mp4</code></p>
+              </div>
+              <div class="placeholder-bottomline mono"><span>ORIGINAL DESKTOP APP</span><span>NO SIMULATED DETECTIONS</span></div>
+            </div>
+            <video class="demo-video" controls playsinline preload="metadata" hidden aria-label="ChromaNav desktop application demonstration"></video>
+          </div>
+          <figcaption class="demo-caption mono">
+            <span>CHROMANAV / DESKTOP CAPTURE</span>
+            <span>LOCAL RECORDING · RESPONSIVE PLAYER</span>
+          </figcaption>
+        </figure>
+        <p class="demo-note">
+          To add the recording, place the MP4 at
+          <code>media/chromanav-demo.mp4</code>, add
+          <code>&lt;source src="media/chromanav-demo.mp4" type="video/mp4"&gt;</code>
+          inside the video element, remove its <code>hidden</code> attribute,
+          and add <code>hidden</code> to the placeholder. The native player
+          includes standard playback controls.
+        </p>
+      </section>
+
+      <section class="process-section page-shell" id="how-it-works" aria-labelledby="process-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow mono"><span>03</span> &nbsp; HOW IT WORKS</p>
+            <h2 id="process-title">From camera frame<br /><span>to spoken cue.</span></h2>
+          </div>
+          <p class="section-aside">
+            Open each step for a little more detail. The flow describes the
+            Python application—not an in-browser demo.
+          </p>
+        </div>
+
+        <div class="pipeline" aria-label="ChromaNav detection pipeline">
+          <details class="pipeline-step">
+            <summary>
+              <span class="step-index mono">01</span>
+              <span class="step-copy"><span class="step-kind mono">INPUT</span><span class="step-title">Webcam frame</span></span>
+              <span class="step-toggle" aria-hidden="true"></span>
+            </summary>
+            <p>Starting detection opens the default webcam through OpenCV and reads frames from camera device 0.</p>
+          </details>
+          <details class="pipeline-step">
+            <summary>
+              <span class="step-index mono">02</span>
+              <span class="step-copy"><span class="step-kind mono">OBJECT DETECTION</span><span class="step-title">YOLOv8</span></span>
+              <span class="step-toggle" aria-hidden="true"></span>
+            </summary>
+            <p>The Ultralytics YOLO model looks for supported objects. The app maps only traffic lights and stop signs, using a 0.50 confidence threshold.</p>
+          </details>
+          <details class="pipeline-step">
+            <summary>
+              <span class="step-index mono">03</span>
+              <span class="step-copy"><span class="step-kind mono">TRAFFIC LIGHT ONLY</span><span class="step-title">HSV colour estimate</span></span>
+              <span class="step-toggle" aria-hidden="true"></span>
+            </summary>
+            <p>For a detected traffic light, OpenCV checks HSV colour masks within the cropped box and uses the expected top-to-bottom signal positions as a heuristic. If it is unsure, the label stays “Traffic Light.”</p>
+          </details>
+          <details class="pipeline-step">
+            <summary>
+              <span class="step-index mono">04</span>
+              <span class="step-copy"><span class="step-kind mono">FEEDBACK</span><span class="step-title">Overlay + speech</span></span>
+              <span class="step-toggle" aria-hidden="true"></span>
+            </summary>
+            <p>OpenCV draws a box and label in its video window. A separate pyttsx3 worker speaks queued labels, including estimated light colours or “Stop.”</p>
+          </details>
+        </div>
+        <p class="pipeline-footnote mono">
+          COLOUR IS ESTIMATED FROM PIXELS — IT IS NOT A SEPARATE YOLO CLASS.
+          OTHER DETECTION CLASSES ARE IGNORED.
+        </p>
+      </section>
+
+      <section class="technical-section page-shell" id="technical-overview" aria-labelledby="technical-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow mono"><span>04</span> &nbsp; TECHNICAL OVERVIEW</p>
+            <h2 id="technical-title">A small desktop<br /><span>computer vision system.</span></h2>
+          </div>
+          <p class="section-aside">
+            The project brings together a webcam loop, a pretrained object
+            detector, a colour heuristic, and queued speech output.
+          </p>
+        </div>
+
+        <div class="technical-grid">
+          <div class="architecture-panel">
+            <p class="panel-label mono">ARCHITECTURE / PYTHON</p>
+            <ol class="architecture-list">
+              <li><span class="architecture-number mono">01</span><span><strong>Tkinter</strong><small>Desktop controls, status and voice test</small></span></li>
+              <li><span class="architecture-number mono">02</span><span><strong>OpenCV + NumPy</strong><small>Webcam frames, HSV masks and detection overlay</small></span></li>
+              <li><span class="architecture-number mono">03</span><span><strong>Ultralytics YOLOv8</strong><small>Object detections from a local model checkpoint</small></span></li>
+              <li><span class="architecture-number mono">04</span><span><strong>pyttsx3</strong><small>Queued speech announcements in a worker thread</small></span></li>
+            </ol>
+          </div>
+          <div class="implementation-panel">
+            <p class="panel-label mono">IMPLEMENTATION NOTES</p>
+            <div class="spec-row"><span>Mapped classes</span><span>Traffic light · stop sign</span></div>
+            <div class="spec-row"><span>Colour method</span><span>HSV masks + vertical-position heuristic</span></div>
+            <div class="spec-row"><span>Inference input</span><span>640 px · at most 8 inferences / sec</span></div>
+            <div class="spec-row"><span>Default weights</span><span><code>yolov8n.pt</code> · required locally</span></div>
+            <p class="challenge-note">
+              This is a prototype with deliberately narrow class coverage.
+              Colour estimates can be uncertain when lights are small,
+              obscured, unusually arranged, or seen in poor lighting; false
+              positives and missed detections remain possible.
+            </p>
+          </div>
+        </div>
+        <div class="safety-note">
+          <span class="safety-mark mono" aria-hidden="true">!</span>
+          <p>ChromaNav is an assistive prototype, not a certified road-safety system. It should not replace visual awareness or independent road-safety decisions.</p>
+        </div>
+      </section>
+
+      <section class="future-section page-shell" aria-labelledby="future-title">
+        <div>
+          <p class="eyebrow mono"><span>05</span> &nbsp; FUTURE POSSIBILITIES</p>
+          <h2 id="future-title">Directions to explore,<br /><span>not current features.</span></h2>
+        </div>
+        <ul class="future-list">
+          <li>Browser-based webcam integration</li>
+          <li>More robust detection across varied conditions</li>
+          <li>Further accessibility and configurable voice options</li>
+        </ul>
+      </section>
+
+      <section class="source-section page-shell" aria-label="Source repository">
+        <div>
+          <p class="eyebrow mono">THE ORIGINAL PROJECT</p>
+          <p>Explore the code, setup notes, and current limitations.</p>
+        </div>
+        <a
+          class="source-link mono"
+          href="https://github.com/lizalfathim-eng/Chromanav"
+          target="_blank"
+          rel="noopener noreferrer"
+        >VIEW CHROMANAV ON GITHUB <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="chroma-footer page-shell mono">
+      <a href="index.html#things-ive-built">← LIZAL FATHIMA / PORTFOLIO</a>
+      <span>CHROMANAV · COMPUTER VISION PROJECT</span>
+      <a href="#introduction">BACK TO TOP ↑</a>
+    </footer>
+  </body>
+</html>

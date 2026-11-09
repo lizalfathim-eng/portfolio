@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a192f" />
+    <meta
+      name="description"
+      content="Explore AetherAI document retrieval with an interactive sample-data simulation."
+    />
+    <title>AetherAI — Document Retrieval Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="project-theme.css" />
+    <script src="aetherai-data.js" defer></script>
+    <script src="aetherai.js" defer></script>
+  </head>
+  <body class="aether-page">
+    <a class="skip-link" href="#search-query">Skip to document search</a>
+
+    <header class="app-header">
+      <a class="app-brand" href="index.html#things-ive-built" aria-label="AetherAI, back to portfolio">
+        <span class="app-brand-mark">Aether<span>AI</span></span>
+      </a>
+      <nav class="product-nav" aria-label="Project navigation">
+        <a class="product-nav-link is-current" href="#search-query">Document Search</a>
+        <a class="product-nav-link" href="#about-demo">About / How It Works</a>
+      </nav>
+      <a class="back-link" href="index.html#things-ive-built"><span aria-hidden="true">←</span> Back to Portfolio</a>
+    </header>
+
+    <main id="experience">
+      <section class="project-intro app-shell" aria-labelledby="project-title">
+        <div class="intro-copy">
+          <p class="eyebrow">A DOCUMENT RETRIEVAL EXPERIENCE</p>
+          <h1 id="project-title">Search. Discover.<br /><span>Retrieve.</span></h1>
+          <p class="project-lede">
+            Explore how AetherAI finds relevant government documents through
+            hybrid semantic and keyword search.
+          </p>
+          <a class="text-link" href="https://github.com/lizalfathim-eng/AetherAi" target="_blank" rel="noopener noreferrer">
+            <span>Explore the original repository</span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="welcome-index" aria-hidden="true">
+          <span class="welcome-index-number">20</span>
+          <span class="welcome-index-label">SAMPLE DOCUMENTS<br />READY TO EXPLORE</span>
+          <span class="welcome-index-rule"></span>
+          <span class="welcome-index-caption">AETHERAI / SEARCH</span>
+        </div>
+      </section>
+
+      <section class="search-workspace app-shell" aria-labelledby="search-heading">
+        <div class="search-intro">
+          <div>
+            <p class="eyebrow">DOCUMENT SEARCH</p>
+            <h2 id="search-heading">Explore the collection</h2>
+          </div>
+          <p class="search-aside">Search by phrase, keyword or intent. Open a result to inspect its document preview.</p>
+        </div>
+
+        <form class="search-form" id="search-form">
+          <label class="field-label" for="search-query">What document are you looking for?</label>
+          <div class="search-row">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+              id="search-query"
+              class="text-input"
+              type="search"
+              autocomplete="off"
+              placeholder="Try keywords or describe what you’re looking for…"
+              required
+            />
+            <button class="button button-primary" type="submit">
+              <span>Search documents</span><span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="query-hints" aria-label="Example searches">
+            <span class="hint-label mono">TRY</span>
+            <button type="button" data-query="travel advance settlement">travel advance settlement</button>
+            <button type="button" data-query="money left after a project is done">money left after a project is done</button>
+            <button type="button" data-query="how are supplier bills checked">how are supplier bills checked</button>
+          </div>
+        </form>
+
+        <div class="simulation-note" id="about-demo">
+          <span class="info-icon" aria-hidden="true">i</span>
+          <p>Results are based on a curated sample document collection. This simulation demonstrates document retrieval, not AI-generated answers.</p>
+          <a class="about-link" href="#ranking-note">How it works</a>
+        </div>
+
+        <div class="retrieval-method" aria-label="Hybrid ranking stages">
+          <div><span class="method-index mono">01</span><span>Keyword evidence</span></div>
+          <span class="method-join" aria-hidden="true">+</span>
+          <div><span class="method-index mono">02</span><span>Semantic signal</span></div>
+          <span class="method-join" aria-hidden="true">+</span>
+          <div><span class="method-index mono">03</span><span>Exact-query boost</span></div>
+          <span class="method-arrow" aria-hidden="true">→</span>
+          <div><span class="method-index mono">04</span><span>Ranked documents</span></div>
+        </div>
+
+        <div class="results-toolbar">
+          <div>
+            <p class="eyebrow">SEARCH RESULTS <span class="result-count-label">· TOP 5</span></p>
+            <p id="search-status" class="search-status" role="status" aria-live="polite">
+              READY &nbsp; / &nbsp; ENTER A QUERY TO EXPLORE THE SAMPLE INDEX
+            </p>
+          </div>
+          <button class="compare-toggle mono" type="button" id="compare-toggle" aria-expanded="false" aria-controls="comparison-panel" disabled>
+            COMPARE KEYWORD-ONLY <span aria-hidden="true">＋</span>
+          </button>
+        </div>
+
+        <div class="search-results" id="search-results">
+          <div class="results-empty" id="results-empty">
+            <span class="empty-cross" aria-hidden="true">+</span>
+            <p class="mono">YOUR SEARCH RESULTS WILL APPEAR HERE</p>
+          </div>
+        </div>
+
+        <section class="comparison-panel" id="comparison-panel" hidden aria-labelledby="comparison-heading">
+          <div class="comparison-heading">
+            <div>
+              <p class="eyebrow mono"><span>RANKING STUDY</span> &nbsp; ILLUSTRATIVE COMPARISON</p>
+              <h3 id="comparison-heading">Same query. Different retrieval.</h3>
+            </div>
+            <p>Predefined demo ranking logic only. Neither column runs an AI model.</p>
+          </div>
+          <div class="comparison-columns">
+            <section class="comparison-column">
+              <div class="comparison-column-heading">
+                <span class="mono">KEYWORD-ONLY</span><span class="mono">LITERAL OVERLAP</span>
+              </div>
+              <p class="comparison-method">Ranks documents by matching query terms.</p>
+              <div id="keyword-results" class="comparison-results"></div>
+            </section>
+            <section class="comparison-column hybrid-column">
+              <div class="comparison-column-heading">
+                <span class="mono">HYBRID SIMULATION</span><span class="mono">CONCEPT + BOOST</span>
+              </div>
+              <p class="comparison-method">Concept-map signal with the illustrative exact-phrase boost.</p>
+              <div id="hybrid-results" class="comparison-results"></div>
+            </section>
+          </div>
+        </section>
+
+        <div class="ranking-note" id="ranking-note">
+          <p class="eyebrow">ABOUT THIS DEMONSTRATION</p>
+          <p>
+            The original project uses normalized <code>all-mpnet-base-v2</code>
+            vectors with FAISS inner product (cosine similarity) and applies
+            a <code>+0.10</code> boost when the full query appears in a retrieved
+            chunk. Its default Top-K is 5. This interface uses fixed Top-5 and
+            a curated concept map to illustrate semantic matching; no model,
+            vector index or backend runs here. Keyword coverage is shown for
+            context, and AetherAI returns documents rather than generated answers.
+            <a href="https://github.com/lizalfathim-eng/AetherAi" target="_blank" rel="noopener noreferrer">View the source project ↗</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="preview-section app-shell" id="document-preview" hidden aria-labelledby="preview-title">
+        <div class="preview-header">
+          <div>
+            <p class="eyebrow mono"><span>DOCUMENT RECORD</span> &nbsp; SAMPLE PREVIEW</p>
+            <h2 id="preview-title">Document preview</h2>
+          </div>
+          <button type="button" class="preview-back mono" id="preview-back">← BACK TO RESULTS</button>
+        </div>
+        <article class="preview-content" id="preview-content"></article>
+        <p class="preview-disclaimer mono">FICTIONAL SAMPLE CONTENT &nbsp; / &nbsp; NOT AN OFFICIAL GOVERNMENT RECORD</p>
+      </section>
+    </main>
+
+    <footer class="app-footer app-shell">
+      <a href="index.html#things-ive-built">← Lizal Fathima / Portfolio</a>
+      <span>AetherAI · Document retrieval simulation</span>
+      <a href="https://github.com/lizalfathim-eng/AetherAi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </footer>
+  </body>
+</html>
